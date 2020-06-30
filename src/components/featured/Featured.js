@@ -19,6 +19,7 @@ export default () => (
               shortDescription
               featuredImage {
                 fluid(maxWidth: 1200, quality: 85) {
+                  src
                   ...GatsbyContentfulFluid_withWebp
                 }
               }
@@ -34,7 +35,7 @@ export default () => (
             <div
               className="header__hero"
               style={{
-                backgroundImage: `url(${edge.node.featuredImage.fluid})`,
+                backgroundImage: `url(${edge.node.featuredImage.fluid.src})`,
               }}
             ></div>
             <div className="header__content">
